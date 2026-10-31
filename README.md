@@ -42,7 +42,3 @@ The full skill explains exactly how each principle gets applied — see `skills/
 /plugin marketplace add sanjanagangishetty/user-flow-diagram
 /plugin install user-flow-diagram@sanjana-skills
 ```
-
-## License
-
-MIT — use it, fork it, adapt it.
