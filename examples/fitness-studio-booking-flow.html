@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fitness Studio — Class Booking User Flow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #f6f5fb; --card: #ffffff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; }
+  header { padding: 28px 40px 18px; background: var(--card); border-bottom: 1px solid #e4e0f3; }
+  h1 { font-family: Fraunces, Georgia, serif; font-size: 24px; margin: 0 0 6px; font-weight: 600; }
+  header p { margin: 0; font-size: 14px; color: #64748b; max-width: 920px; line-height: 1.5; }
+  .scroll-wrap { overflow: auto; padding: 36px; }
+  .node-title { font-family: Fraunces, Georgia, serif; font-size: 14px; font-weight: 600; }
+  .node-sub { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 500; }
+  .edge-label-text { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 600; }
+  .legend-title { font-family: Fraunces, Georgia, serif; font-size: 15px; font-weight: 600; fill: #1a1a2e; }
+  .legend-text { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 12px; fill: #1a1a2e; }
+  .legend-note { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 11px; fill: #64748b; }
+  .section-label { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; fill: #64748b; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Booking a Class at a Fitness Studio — Full User Flow</h1>
+  <p>Covers browsing classes, booking a spot, what happens when a class is full (waitlist, auto-notify, timed claim), and cancelling a booking (including the free-cancellation window and late-cancellation fee). Persistent features — My Bookings, notifications, favorites — are shown in the panel on the left since they're available any time, not a single step in the path.</p>
+</header>
+<div class="scroll-wrap">
+<svg viewBox="0 0 2270 3336" width="2270" height="3336" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+  <marker id="arrowInk" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#64748b"/>
+  </marker>
+  <marker id="arrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#c98a2b"/>
+  </marker>
+</defs>
+
+<rect x="130.0" y="230.0" width="615.0" height="1020.0" rx="22" fill="#fff7ea" stroke="#e0b668" stroke-width="1.6" stroke-dasharray="3 5"/>
+<text x="437.5" y="216.0" text-anchor="middle" class="section-label">ALWAYS AVAILABLE — once the member has an account</text>
+<text x="950.0" y="-20.0" text-anchor="middle" class="section-label">BROWSING &amp; BOOKING</text>
+<text x="1550.0" y="790.0" text-anchor="middle" class="section-label">FULL CLASS → WAITLIST</text>
+<text x="990.0" y="1710.0" text-anchor="middle" class="section-label">CANCELLING A BOOKING</text>
+<path d="M 990.0 116.0 L 990.0 170.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 990.0 254.0 L 990.0 300.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 990.0 384.0 L 990.0 430.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 850.0 342.0 L 828.0 342.0 Q 810.0 342.0 810.0 360.0 L 810.0 454.0 Q 810.0 472.0 792.0 472.0 L 725.0 472.0" fill="none" stroke="#c98a2b" stroke-width="2.25" stroke-dasharray="7 6" marker-end="url(#arrowAmber)"/>
+<path d="M 495.0 472.0 L 465.0 472.0 L 465.0 472.0 L 850.0 472.0" fill="none" stroke="#c98a2b" stroke-width="2.25" stroke-dasharray="7 6" marker-end="url(#arrowAmber)"/>
+<path d="M 990.0 514.0 L 990.0 560.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 990.0 644.0 L 990.0 690.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 990.0 774.0 L 990.0 820.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 990.0 936.0 L 990.0 1010.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 1105.0 878.0 L 1532.0 878.0 Q 1550.0 878.0 1550.0 860.0 L 1550.0 820.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 990.0 1126.0 L 990.0 1200.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 875.0 1068.0 L 628.0 1068.0 Q 610.0 1068.0 610.0 1050.0 L 610.0 1010.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 495.0 1032.0 L 465.0 1032.0 L 465.0 1040.0 L 875.0 1040.0" fill="none" stroke="#c98a2b" stroke-width="2.25" stroke-dasharray="7 6" marker-end="url(#arrowAmber)"/>
+<path d="M 990.0 1284.0 L 990.0 1330.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 990.0 1414.0 L 990.0 1460.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 990.0 1544.0 L 990.0 1590.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 1550.0 904.0 L 1550.0 1010.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 1550.0 1126.0 L 1550.0 1200.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 1665.0 1068.0 L 1882.0 1068.0 Q 1900.0 1068.0 1900.0 1050.0 L 1900.0 1010.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 2025.0 1052.0 L 2062.0 1052.0 Q 2080.0 1052.0 2080.0 1034.0 L 2080.0 280.0 Q 2080.0 262.0 2062.0 262.0 L 1130.0 262.0" fill="none" stroke="#c98a2b" stroke-width="2.25" stroke-dasharray="7 6" marker-end="url(#arrowAmber)"/>
+<path d="M 1550.0 1284.0 L 1550.0 1330.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 1550.0 1414.0 L 1550.0 1460.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 1550.0 1544.0 L 1550.0 1590.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 1550.0 1674.0 L 1550.0 1730.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 1550.0 1846.0 L 1550.0 1920.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 1550.0 2004.0 L 1550.0 2050.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 1435.0 1788.0 L 1333.0 1788.0 Q 1315.0 1788.0 1315.0 1770.0 L 1315.0 1260.0 Q 1315.0 1242.0 1297.0 1242.0 L 1130.0 1242.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 440.0 328.0 L 588.0 328.0 Q 600.0 328.0 600.0 316.0 L 600.0 300.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 600.0 384.0 L 440.0 356.0" fill="none" stroke="#c98a2b" stroke-width="2.25" stroke-dasharray="7 6" marker-end="url(#arrowAmber)"/>
+<path d="M 300.0 384.0 L 300.0 630.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 440.0 658.0 L 588.0 658.0 Q 600.0 658.0 600.0 646.0 L 600.0 630.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 600.0 746.0 L 600.0 800.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 715.0 688.0 L 729.5 688.0 Q 740.0 688.0 740.0 698.5 L 740.0 931.5 Q 740.0 942.0 729.5 942.0 L 715.0 942.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 485.0 842.0 L 475.5 842.0 Q 470.0 842.0 470.0 836.5 L 470.0 671.0 Q 470.0 658.0 457.0 658.0 L 440.0 658.0" fill="none" stroke="#c98a2b" stroke-width="2.25" stroke-dasharray="7 6" marker-end="url(#arrowAmber)"/>
+<path d="M 485.0 958.0 L 475.5 958.0 Q 470.0 958.0 470.0 952.5 L 470.0 699.0 Q 470.0 686.0 457.0 686.0 L 440.0 686.0" fill="none" stroke="#c98a2b" stroke-width="2.25" stroke-dasharray="7 6" marker-end="url(#arrowAmber)"/>
+<path d="M 300.0 714.0 L 300.0 1120.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 440.0 1148.0 L 588.0 1148.0 Q 600.0 1148.0 600.0 1136.0 L 600.0 1120.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 600.0 1204.0 L 440.0 1176.0" fill="none" stroke="#c98a2b" stroke-width="2.25" stroke-dasharray="7 6" marker-end="url(#arrowAmber)"/>
+<path d="M 160.0 370.0 L 78.0 370.0 Q 60.0 370.0 60.0 388.0 L 60.0 1770.0 Q 60.0 1788.0 78.0 1788.0 L 860.0 1788.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 990.0 1826.0 L 990.0 1880.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 990.0 1964.0 L 990.0 2010.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 990.0 2094.0 L 990.0 2140.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 990.0 2256.0 L 990.0 2300.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 875.0 2198.0 L 628.0 2198.0 Q 610.0 2198.0 610.0 2180.0 L 610.0 2140.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 495.0 2182.0 L 478.0 2182.0 Q 465.0 2182.0 465.0 2169.0 L 465.0 1924.0 Q 465.0 1906.0 483.0 1906.0 L 850.0 1906.0" fill="none" stroke="#c98a2b" stroke-width="2.25" stroke-dasharray="7 6" marker-end="url(#arrowAmber)"/>
+<path d="M 990.0 2430.0 L 990.0 2460.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 875.0 2365.0 L 628.0 2365.0 Q 610.0 2365.0 610.0 2383.0 L 610.0 2460.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 610.0 2544.0 L 610.0 2600.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 610.0 2716.0 L 610.0 2760.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 495.0 2658.0 L 453.0 2658.0 Q 435.0 2658.0 435.0 2640.0 L 435.0 1954.0 Q 435.0 1936.0 453.0 1936.0 L 850.0 1936.0" fill="none" stroke="#c98a2b" stroke-width="2.25" stroke-dasharray="7 6" marker-end="url(#arrowAmber)"/>
+<path d="M 990.0 2544.0 L 990.0 2900.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 485.0 2802.0 L 463.0 2802.0 Q 445.0 2802.0 445.0 2820.0 L 445.0 2924.0 Q 445.0 2942.0 463.0 2942.0 L 850.0 2942.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 990.0 2984.0 L 990.0 3030.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<path d="M 990.0 3114.0 L 990.0 3160.0" fill="none" stroke="#64748b" stroke-width="2.25" marker-end="url(#arrowInk)"/>
+<ellipse cx="990.0" cy="78.0" rx="115.0" ry="38.0" class="node-shape" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+<rect x="850.0" y="170.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="850.0" y="300.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="495.0" y="430.0" width="230.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="850.0" y="430.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="850.0" y="560.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="850.0" y="690.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<polygon points="990.0,820.0 1105.0,878.0 990.0,936.0 875.0,878.0" class="node-shape" fill="#e8f0ff" stroke="#3b6fe0" stroke-width="2"/>
+<polygon points="990.0,1010.0 1105.0,1068.0 990.0,1126.0 875.0,1068.0" class="node-shape" fill="#e8f0ff" stroke="#3b6fe0" stroke-width="2"/>
+<rect x="495.0" y="1010.0" width="230.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<polygon points="876.0,1200.0 1130.0,1200.0 1104.0,1284.0 850.0,1284.0" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="850.0" y="1330.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="850.0" y="1460.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<ellipse cx="990.0" cy="1628.0" rx="115.0" ry="38.0" class="node-shape" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+<rect x="1410.0" y="820.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<polygon points="1550.0,1010.0 1665.0,1068.0 1550.0,1126.0 1435.0,1068.0" class="node-shape" fill="#e8f0ff" stroke="#3b6fe0" stroke-width="2"/>
+<rect x="1775.0" y="1010.0" width="250.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<polygon points="1436.0,1200.0 1690.0,1200.0 1664.0,1284.0 1410.0,1284.0" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="1410.0" y="1330.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="1410.0" y="1460.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="1410.0" y="1590.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<polygon points="1550.0,1730.0 1665.0,1788.0 1550.0,1846.0 1435.0,1788.0" class="node-shape" fill="#e8f0ff" stroke="#3b6fe0" stroke-width="2"/>
+<rect x="1410.0" y="1920.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<ellipse cx="1550.0" cy="2088.0" rx="115.0" ry="38.0" class="node-shape" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+<rect x="160.0" y="300.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="485.0" y="300.0" width="230.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="160.0" y="630.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<polygon points="600.0,630.0 715.0,688.0 600.0,746.0 485.0,688.0" class="node-shape" fill="#e8f0ff" stroke="#3b6fe0" stroke-width="2"/>
+<rect x="485.0" y="800.0" width="230.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="485.0" y="900.0" width="230.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="160.0" y="1120.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="485.0" y="1120.0" width="230.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<ellipse cx="990.0" cy="1788.0" rx="130.0" ry="38.0" class="node-shape" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+<rect x="850.0" y="1880.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="850.0" y="2010.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<polygon points="990.0,2140.0 1105.0,2198.0 990.0,2256.0 875.0,2198.0" class="node-shape" fill="#e8f0ff" stroke="#3b6fe0" stroke-width="2"/>
+<rect x="495.0" y="2140.0" width="230.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<polygon points="990.0,2300.0 1105.0,2365.0 990.0,2430.0 875.0,2365.0" class="node-shape" fill="#e8f0ff" stroke="#3b6fe0" stroke-width="2"/>
+<rect x="495.0" y="2460.0" width="230.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<polygon points="610.0,2600.0 725.0,2658.0 610.0,2716.0 495.0,2658.0" class="node-shape" fill="#e8f0ff" stroke="#3b6fe0" stroke-width="2"/>
+<polygon points="876.0,2460.0 1130.0,2460.0 1104.0,2544.0 850.0,2544.0" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<polygon points="511.0,2760.0 735.0,2760.0 709.0,2844.0 485.0,2844.0" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="850.0" y="2900.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<rect x="850.0" y="3030.0" width="280.0" height="84.0" rx="16" ry="16" class="node-shape" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/>
+<ellipse cx="990.0" cy="3198.0" rx="115.0" ry="38.0" class="node-shape" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+
+
+
+<g class="edge-label"><rect x="505.6" y="391.0" width="196.7" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="604.0" y="404.0" text-anchor="middle" class="edge-label-text" fill="#64748b">optionally filters / searches</text></g>
+<g class="edge-label"><rect x="745.2" y="441.0" width="89.6" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="790.0" y="454.0" text-anchor="middle" class="edge-label-text" fill="#64748b">list updates</text></g>
+
+
+
+<g class="edge-label"><rect x="906.0" y="964.0" width="184.1" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="998.0" y="977.0" text-anchor="middle" class="edge-label-text" fill="#1f8a4c">✓ Yes — continue to payment</text></g>
+<g class="edge-label"><rect x="1195.5" y="855.0" width="184.1" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="1287.5" y="868.0" text-anchor="middle" class="edge-label-text" fill="#c23b3b">✗ No — show waitlist option</text></g>
+<g class="edge-label"><rect x="922.9" y="1154.0" width="146.3" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="996.0" y="1167.0" text-anchor="middle" class="edge-label-text" fill="#1f8a4c">✓ Yes — ready to book</text></g>
+<g class="edge-label"><rect x="732.5" y="1045.0" width="140.0" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="802.5" y="1058.0" text-anchor="middle" class="edge-label-text" fill="#c23b3b">✗ No — needs payment</text></g>
+<g class="edge-label"><rect x="517.4" y="990.0" width="165.2" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="600.0" y="1003.0" text-anchor="middle" class="edge-label-text" fill="#64748b">payment ready, continues</text></g>
+
+
+
+
+<g class="edge-label"><rect x="1481.7" y="1154.0" width="152.6" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="1558.0" y="1167.0" text-anchor="middle" class="edge-label-text" fill="#1f8a4c">✓ Yes — joins the list</text></g>
+<g class="edge-label"><rect x="1709.3" y="991.0" width="146.3" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="1782.5" y="1004.0" text-anchor="middle" class="edge-label-text" fill="#c23b3b">✗ No — keeps browsing</text></g>
+<g class="edge-label"><rect x="1744.2" y="231.0" width="171.5" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="1830.0" y="244.0" text-anchor="middle" class="edge-label-text" fill="#64748b">returns to the class list</text></g>
+
+
+
+
+<g class="edge-label"><rect x="1477.4" y="1874.0" width="165.2" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="1560.0" y="1887.0" text-anchor="middle" class="edge-label-text" fill="#c23b3b">✗ No — misses the window</text></g>
+
+<g class="edge-label"><rect x="1010.9" y="1727.0" width="228.2" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="1125.0" y="1740.0" text-anchor="middle" class="edge-label-text" fill="#1f8a4c">✓ Yes — moves into the booked spot</text></g>
+
+<g class="edge-label"><rect x="418.4" y="391.0" width="83.3" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="460.0" y="404.0" text-anchor="middle" class="edge-label-text" fill="#64748b">back to hub</text></g>
+
+
+<g class="edge-label"><rect x="607.2" y="764.0" width="45.5" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="630.0" y="777.0" text-anchor="middle" class="edge-label-text" fill="#1f8a4c">✓ Yes</text></g>
+<g class="edge-label"><rect x="730.0" y="806.0" width="40.0" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="750.0" y="819.0" text-anchor="middle" class="edge-label-text" fill="#c23b3b">✗ No</text></g>
+<g class="edge-label"><rect x="358.9" y="813.0" width="102.2" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="410.0" y="826.0" text-anchor="middle" class="edge-label-text" fill="#64748b">back to center</text></g>
+<g class="edge-label"><rect x="365.8" y="973.0" width="108.5" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="420.0" y="986.0" text-anchor="middle" class="edge-label-text" fill="#64748b">stays available</text></g>
+
+
+<g class="edge-label"><rect x="485.2" y="1205.0" width="89.6" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="530.0" y="1218.0" text-anchor="middle" class="edge-label-text" fill="#64748b">list updates</text></g>
+<g class="edge-label"><rect x="64.2" y="1551.0" width="171.5" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="150.0" y="1564.0" text-anchor="middle" class="edge-label-text" fill="#64748b">wants to cancel a booking</text></g>
+
+
+
+<g class="edge-label"><rect x="939.5" y="2269.0" width="121.1" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="1000.0" y="2282.0" text-anchor="middle" class="edge-label-text" fill="#1f8a4c">✓ Yes — continues</text></g>
+<g class="edge-label"><rect x="735.6" y="2173.0" width="133.7" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="802.5" y="2186.0" text-anchor="middle" class="edge-label-text" fill="#c23b3b">✗ No — keep booking</text></g>
+<g class="edge-label"><rect x="390.0" y="2011.0" width="140.0" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="460.0" y="2024.0" text-anchor="middle" class="edge-label-text" fill="#64748b">booking stays active</text></g>
+<g class="edge-label"><rect x="933.1" y="2436.0" width="133.7" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="1000.0" y="2449.0" text-anchor="middle" class="edge-label-text" fill="#1f8a4c">✓ Yes — full refund</text></g>
+<g class="edge-label"><rect x="668.8" y="2340.0" width="127.4" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="732.5" y="2353.0" text-anchor="middle" class="edge-label-text" fill="#c23b3b">✗ No — fee applies</text></g>
+
+<g class="edge-label"><rect x="537.4" y="2729.0" width="165.2" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="620.0" y="2742.0" text-anchor="middle" class="edge-label-text" fill="#1f8a4c">✓ Yes — cancels with fee</text></g>
+<g class="edge-label"><rect x="325.9" y="2571.0" width="228.2" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="440.0" y="2584.0" text-anchor="middle" class="edge-label-text" fill="#c23b3b">✗ No — keeps booking, stays active</text></g>
+
+<g class="edge-label"><rect x="262.2" y="2821.0" width="215.6" height="18.0" rx="5" fill="#f6f5fb" opacity="0.97"/><text x="370.0" y="2834.0" text-anchor="middle" class="edge-label-text" fill="#64748b">fee processed, ready to continue</text></g>
+
+
+<text x="990.0" y="74.3" text-anchor="middle" class="node-title" fill="#ffffff">Opens the fitness studio</text>
+<text x="990.0" y="91.3" text-anchor="middle" class="node-title" fill="#ffffff">app</text>
+<text x="990.0" y="216.8" text-anchor="middle" class="node-title" fill="#4a2f9e">Logs in / signs up</text>
+<text x="990.0" y="329.8" text-anchor="middle" class="node-title" fill="#4a2f9e">Browse Classes screen</text>
+<text x="990.0" y="350.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">list by day, time, type,</text>
+<text x="990.0" y="364.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">instructor</text>
+<text x="610.0" y="451.3" text-anchor="middle" class="node-title" fill="#4a2f9e">Applies filters or</text>
+<text x="610.0" y="468.3" text-anchor="middle" class="node-title" fill="#4a2f9e">searches</text>
+<text x="610.0" y="489.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">day / time / class</text>
+<text x="610.0" y="503.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">type / instructor</text>
+<text x="990.0" y="468.3" text-anchor="middle" class="node-title" fill="#4a2f9e">Taps a class card to</text>
+<text x="990.0" y="485.3" text-anchor="middle" class="node-title" fill="#4a2f9e">view it</text>
+<text x="990.0" y="589.8" text-anchor="middle" class="node-title" fill="#4a2f9e">Class details screen</text>
+<text x="990.0" y="610.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">time, instructor, spots left,</text>
+<text x="990.0" y="624.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">price / credits</text>
+<text x="990.0" y="736.8" text-anchor="middle" class="node-title" fill="#4a2f9e">Taps &quot;Book This Class&quot;</text>
+<text x="990.0" y="864.3" text-anchor="middle" class="node-title" fill="#204a9e">Spot available in</text>
+<text x="990.0" y="881.3" text-anchor="middle" class="node-title" fill="#204a9e">the class?</text>
+<text x="990.0" y="902.3" text-anchor="middle" class="node-sub" fill="#204a9e" opacity="0.82">(system check)</text>
+<text x="990.0" y="1045.8" text-anchor="middle" class="node-title" fill="#204a9e">Payment method</text>
+<text x="990.0" y="1062.8" text-anchor="middle" class="node-title" fill="#204a9e">or credits on</text>
+<text x="990.0" y="1079.8" text-anchor="middle" class="node-title" fill="#204a9e">file?</text>
+<text x="990.0" y="1100.8" text-anchor="middle" class="node-sub" fill="#204a9e" opacity="0.82">(system check)</text>
+<text x="610.0" y="1031.3" text-anchor="middle" class="node-title" fill="#4a2f9e">Adds payment</text>
+<text x="610.0" y="1048.3" text-anchor="middle" class="node-title" fill="#4a2f9e">method</text>
+<text x="610.0" y="1069.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">or buys class</text>
+<text x="610.0" y="1083.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">credits</text>
+<text x="990.0" y="1238.3" text-anchor="middle" class="node-title" fill="#4a2f9e">Submits the booking</text>
+<text x="990.0" y="1255.3" text-anchor="middle" class="node-title" fill="#4a2f9e">request</text>
+<text x="990.0" y="1366.8" text-anchor="middle" class="node-title" fill="#4a2f9e">Booking confirmed screen</text>
+<text x="990.0" y="1387.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">reservation + receipt shown</text>
+<text x="990.0" y="1496.8" text-anchor="middle" class="node-title" fill="#4a2f9e">Added to My Bookings</text>
+<text x="990.0" y="1517.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">calendar reminder set</text>
+<text x="990.0" y="1632.8" text-anchor="middle" class="node-title" fill="#ffffff">Booked ✓</text>
+<text x="1550.0" y="849.8" text-anchor="middle" class="node-title" fill="#4a2f9e">Waitlist screen shown</text>
+<text x="1550.0" y="870.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">position in line + est. wait</text>
+<text x="1550.0" y="884.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">time</text>
+<text x="1550.0" y="1054.3" text-anchor="middle" class="node-title" fill="#204a9e">Joins the</text>
+<text x="1550.0" y="1071.3" text-anchor="middle" class="node-title" fill="#204a9e">waitlist?</text>
+<text x="1550.0" y="1092.3" text-anchor="middle" class="node-sub" fill="#204a9e" opacity="0.82">(user decision)</text>
+<text x="1900.0" y="1038.3" text-anchor="middle" class="node-title" fill="#4a2f9e">Returns to</text>
+<text x="1900.0" y="1055.3" text-anchor="middle" class="node-title" fill="#4a2f9e">browsing</text>
+<text x="1900.0" y="1076.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">other classes</text>
+<text x="1550.0" y="1236.8" text-anchor="middle" class="node-title" fill="#4a2f9e">Added to waitlist</text>
+<text x="1550.0" y="1257.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">at position #N</text>
+<text x="1550.0" y="1358.3" text-anchor="middle" class="node-title" fill="#4a2f9e">Waitlist confirmation</text>
+<text x="1550.0" y="1375.3" text-anchor="middle" class="node-title" fill="#4a2f9e">screen</text>
+<text x="1550.0" y="1396.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">alerts enabled</text>
+<text x="1550.0" y="1496.8" text-anchor="middle" class="node-title" fill="#4a2f9e">A spot opens up</text>
+<text x="1550.0" y="1517.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">another member cancels</text>
+<text x="1550.0" y="1619.8" text-anchor="middle" class="node-title" fill="#4a2f9e">Push notification sent</text>
+<text x="1550.0" y="1640.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">&quot;A spot opened — claim</text>
+<text x="1550.0" y="1654.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">within 15 min&quot;</text>
+<text x="1550.0" y="1774.3" text-anchor="middle" class="node-title" fill="#204a9e">Claims the spot</text>
+<text x="1550.0" y="1791.3" text-anchor="middle" class="node-title" fill="#204a9e">in time?</text>
+<text x="1550.0" y="1812.3" text-anchor="middle" class="node-sub" fill="#204a9e" opacity="0.82">(user decision)</text>
+<text x="1550.0" y="1948.3" text-anchor="middle" class="node-title" fill="#4a2f9e">Offer passes to</text>
+<text x="1550.0" y="1965.3" text-anchor="middle" class="node-title" fill="#4a2f9e">the</text>
+<text x="1550.0" y="1986.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">next waitlisted member</text>
+<text x="1550.0" y="2092.8" text-anchor="middle" class="node-title" fill="#ffffff">Removed from waitlist</text>
+<text x="300.0" y="336.8" text-anchor="middle" class="node-title" fill="#4a2f9e">My Bookings hub</text>
+<text x="300.0" y="357.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">view upcoming + past classes</text>
+<text x="600.0" y="321.3" text-anchor="middle" class="node-title" fill="#4a2f9e">Views the class</text>
+<text x="600.0" y="338.3" text-anchor="middle" class="node-title" fill="#4a2f9e">list</text>
+<text x="600.0" y="359.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">upcoming and past</text>
+<text x="600.0" y="373.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">bookings</text>
+<text x="300.0" y="659.8" text-anchor="middle" class="node-title" fill="#4a2f9e">Notifications</text>
+<text x="300.0" y="680.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">reminders, waitlist alerts,</text>
+<text x="300.0" y="694.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">cancellations</text>
+<text x="600.0" y="674.3" text-anchor="middle" class="node-title" fill="#204a9e">Taps the</text>
+<text x="600.0" y="691.3" text-anchor="middle" class="node-title" fill="#204a9e">notification?</text>
+<text x="600.0" y="712.3" text-anchor="middle" class="node-sub" fill="#204a9e" opacity="0.82">(user decision)</text>
+<text x="600.0" y="821.3" text-anchor="middle" class="node-title" fill="#4a2f9e">Opens the</text>
+<text x="600.0" y="838.3" text-anchor="middle" class="node-title" fill="#4a2f9e">relevant</text>
+<text x="600.0" y="859.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">screen (e.g. claim</text>
+<text x="600.0" y="873.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">a spot)</text>
+<text x="600.0" y="929.8" text-anchor="middle" class="node-title" fill="#4a2f9e">Stays in the</text>
+<text x="600.0" y="950.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">notification</text>
+<text x="600.0" y="964.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">center</text>
+<text x="300.0" y="1158.3" text-anchor="middle" class="node-title" fill="#4a2f9e">Favorites / saved</text>
+<text x="300.0" y="1175.3" text-anchor="middle" class="node-title" fill="#4a2f9e">classes</text>
+<text x="600.0" y="1141.3" text-anchor="middle" class="node-title" fill="#4a2f9e">Taps the heart</text>
+<text x="600.0" y="1158.3" text-anchor="middle" class="node-title" fill="#4a2f9e">icon to</text>
+<text x="600.0" y="1179.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">save or unsave a</text>
+<text x="600.0" y="1193.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">class</text>
+<text x="990.0" y="1784.3" text-anchor="middle" class="node-title" fill="#ffffff">Opens My Bookings to</text>
+<text x="990.0" y="1801.3" text-anchor="middle" class="node-title" fill="#ffffff">cancel a class</text>
+<text x="990.0" y="1918.3" text-anchor="middle" class="node-title" fill="#4a2f9e">Opens the booking&#x27;s</text>
+<text x="990.0" y="1935.3" text-anchor="middle" class="node-title" fill="#4a2f9e">details screen</text>
+<text x="990.0" y="2056.8" text-anchor="middle" class="node-title" fill="#4a2f9e">Taps &quot;Cancel Booking&quot;</text>
+<text x="990.0" y="2184.3" text-anchor="middle" class="node-title" fill="#204a9e">Confirms the</text>
+<text x="990.0" y="2201.3" text-anchor="middle" class="node-title" fill="#204a9e">cancellation?</text>
+<text x="990.0" y="2222.3" text-anchor="middle" class="node-sub" fill="#204a9e" opacity="0.82">(user decision)</text>
+<text x="610.0" y="2168.3" text-anchor="middle" class="node-title" fill="#4a2f9e">Booking stays</text>
+<text x="610.0" y="2185.3" text-anchor="middle" class="node-title" fill="#4a2f9e">active</text>
+<text x="610.0" y="2206.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">returns to details</text>
+<text x="990.0" y="2335.8" text-anchor="middle" class="node-title" fill="#204a9e">Within the</text>
+<text x="990.0" y="2352.8" text-anchor="middle" class="node-title" fill="#204a9e">free-cancellation</text>
+<text x="990.0" y="2369.8" text-anchor="middle" class="node-title" fill="#204a9e">window?</text>
+<text x="990.0" y="2390.8" text-anchor="middle" class="node-sub" fill="#204a9e" opacity="0.82">(system check — e.g.</text>
+<text x="990.0" y="2404.8" text-anchor="middle" class="node-sub" fill="#204a9e" opacity="0.82">&gt;4 hrs before class)</text>
+<text x="610.0" y="2481.3" text-anchor="middle" class="node-title" fill="#4a2f9e">Late-cancellation</text>
+<text x="610.0" y="2498.3" text-anchor="middle" class="node-title" fill="#4a2f9e">warning</text>
+<text x="610.0" y="2519.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">fee or forfeited</text>
+<text x="610.0" y="2533.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">credit shown</text>
+<text x="610.0" y="2644.3" text-anchor="middle" class="node-title" fill="#204a9e">Still wants to</text>
+<text x="610.0" y="2661.3" text-anchor="middle" class="node-title" fill="#204a9e">cancel?</text>
+<text x="610.0" y="2682.3" text-anchor="middle" class="node-sub" fill="#204a9e" opacity="0.82">(user decision)</text>
+<text x="990.0" y="2496.8" text-anchor="middle" class="node-title" fill="#4a2f9e">Booking cancelled</text>
+<text x="990.0" y="2517.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">payment / credits refunded</text>
+<text x="610.0" y="2781.3" text-anchor="middle" class="node-title" fill="#4a2f9e">Booking</text>
+<text x="610.0" y="2798.3" text-anchor="middle" class="node-title" fill="#4a2f9e">cancelled</text>
+<text x="610.0" y="2819.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">fee applied /</text>
+<text x="610.0" y="2833.3" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">credit forfeited</text>
+<text x="990.0" y="2929.8" text-anchor="middle" class="node-title" fill="#4a2f9e">Spot freed</text>
+<text x="990.0" y="2950.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">next waitlisted member</text>
+<text x="990.0" y="2964.8" text-anchor="middle" class="node-sub" fill="#4a2f9e" opacity="0.82">notified</text>
+<text x="990.0" y="3068.3" text-anchor="middle" class="node-title" fill="#4a2f9e">Cancellation confirmed</text>
+<text x="990.0" y="3085.3" text-anchor="middle" class="node-title" fill="#4a2f9e">screen</text>
+<text x="990.0" y="3202.8" text-anchor="middle" class="node-title" fill="#ffffff">Cancelled</text>
+<rect x="1760.0" y="10.0" width="430.0" height="368.0" rx="16" fill="#ffffff" stroke="#d8d3ee" stroke-width="1.5"/>
+<text x="1780.0" y="34.0" class="legend-title">Legend</text>
+<ellipse cx="1803.0" cy="79.0" rx="23.0" ry="15.0" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/><text x="1838.0" y="84.0" class="legend-text">Start / End</text><rect x="1780.0" y="106.0" width="46.0" height="30.0" rx="7" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/><text x="1838.0" y="126.0" class="legend-text">Screen or action</text><polygon points="1803.0,148.0 1826.0,163.0 1803.0,178.0 1780.0,163.0" fill="#e8f0ff" stroke="#3b6fe0" stroke-width="2"/><text x="1838.0" y="168.0" class="legend-text">Decision</text><polygon points="1789.0,190.0 1826.0,190.0 1817.0,220.0 1780.0,220.0" fill="#efeafc" stroke="#7c5cf0" stroke-width="2"/><text x="1838.0" y="210.0" class="legend-text">Data in / out (sent to or from the system)</text><line x1="1780.0" y1="238.0" x2="1826.0" y2="238.0" stroke="#64748b" stroke-width="2.25"/><text x="1838.0" y="243.0" class="legend-text">Forward path</text><line x1="1780.0" y1="268.0" x2="1826.0" y2="268.0" stroke="#c98a2b" stroke-width="2.25" stroke-dasharray="7 6"/><text x="1838.0" y="273.0" class="legend-text">Alternate path / loop back</text><text x="1780.0" y="307.0" class="legend-text" fill="#1f8a4c">✓ Yes</text><text x="1850.0" y="307.0" class="legend-text" fill="#c23b3b">✗ No</text><text x="1780.0" y="337.0" class="legend-note">Single actor throughout:</text><text x="1780.0" y="355.0" class="legend-note">the studio member. No separate</text><text x="1780.0" y="373.0" class="legend-note">role performs any step shown.</text>
+</svg>
+</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "user-flow-diagram",
+  "description": "Build detailed, standard-convention user flow diagrams (oval/rectangle/diamond/parallelogram) as standalone HTML files, grounded in Figma, NN/g, and IxDF guidance.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Sanjana Gangishetty"
+  }
+}

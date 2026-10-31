@@ -1,0 +1,12 @@
+{
+  "name": "sanjana-skills",
+  "owner": {
+    "name": "Sanjana Gangishetty"
+  },
+  "plugins": [
+    {
+      "name": "user-flow-diagram",
+      "source": "./"
+    }
+  ]
+}
