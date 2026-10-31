@@ -30,7 +30,9 @@ The full skill explains exactly how each principle gets applied. See `skills/use
 
 ## Example
 
-`examples/fitness-studio-booking-flow.html` is a full worked example built from a plain request ("make me a user flow for how someone books a class, including the waitlist and cancellation"). Open it directly in a browser to see the skill's output.
+A full worked example, built from a plain request ("make me a user flow for how someone books a class, including the waitlist and cancellation"): **[view it live](https://gangishettysanjana.github.io/user-flow-diagram/examples/fitness-studio-booking-flow.html)**.
+
+(GitHub shows `.html` files as raw code rather than rendering them, so use the live link above, or download the file and open it locally, rather than clicking the file in the repo browser.)
 
 ## Install
 
