@@ -2,6 +2,12 @@
 
 A Claude Code skill that builds detailed, standard-convention user flow diagrams as standalone HTML files — not loose sketches, not abstract system diagrams, real flowcharts with the shapes, branching logic, and labeling that make them actually readable by someone who didn't build the product.
 
+## What this is (and isn't)
+
+This is a tool to get a first pass done faster, not a replacement for your actual UX process. What it does is narrow: it tells Claude exactly what "user flow" means in precise UX terms — the specific shapes, the branching logic, the distinction between a user flow and a user journey — so when you ask for one, you get a real flowchart instead of a vague sketch or an abstract system diagram. It doesn't do your user research, doesn't validate the flow against real usage, and the output still deserves a human pass before it ships anywhere. It's built for quick iteration and exploring a flow early, not for skipping the thinking a real flow needs.
+
+I built this for my own use, exploring product flows through Claude before committing to them properly in Figma. Use it the same way, or adapt it to however you work.
+
 ## What it does
 
 Ask Claude for a user flow for any product or feature, and this skill:
